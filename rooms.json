@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "meta": {
+    "gridSize": 12,
+    "tileIndexing": "1-based",
+    "defaultDoorSpan": [6, 7],
+    "defaultWallSpan": [1, 12]
+  },
+  "rules": {
+    "uniqueRoomsPerDungeon": true,
+    "requireExactConnectionType": true
+  },
+  "rooms": [
+    {
+      "id": "room_001",
+      "name": "Starter Chamber",
+      "image": "/rooms/cave-room-1.jpg",
+      "allowRotation": true,
+      "weight": 1,
+      "tags": ["starter", "stone"],
+      "openings": {
+        "N": { "kind": "wall", "span": [1, 12] },
+        "E": { "kind": "wall", "span": [1, 12] },
+        "S": { "kind": "wall", "span": [1, 12] },
+        "W": { "kind": "wall", "span": [1, 12] }
+      }
+    },
+    {
+      "id": "room_002",
+      "name": "Collapsed Hall (South wall open)",
+      "image": "/rooms/room_002.jpg",
+      "allowRotation": true,
+      "weight": 1,
+      "tags": ["hallway"],
+      "openings": {
+        "N": { "kind": "wall", "span": [1, 12] },
+        "E": { "kind": "wall", "span": [1, 12] },
+        "S": { "kind": "none" },
+        "W": { "kind": "wall", "span": [1, 12] }
+      }
+    },
+    {
+      "id": "room_003",
+      "name": "Dead End Shrine",
+      "image": "/rooms/room_003.jpg",
+      "allowRotation": true,
+      "weight": 0.7,
+      "tags": ["shrine", "deadend"],
+      "openings": {
+        "N": { "kind": "wall", "span": [1, 12] },
+        "E": { "kind": "wall", "span": [1, 12] },
+        "S": { "kind": "door", "span": [6, 7] },
+        "W": { "kind": "wall", "span": [1, 12] }
+      }
+    }
+  ]
+}
