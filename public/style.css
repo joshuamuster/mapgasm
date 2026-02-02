@@ -92,6 +92,10 @@ img {
     }
 }
 
+.placed-room {
+    cursor: pointer;
+}
+
 .active-room {
     outline: 2px solid white;
     outline-offset: -2px;
@@ -101,6 +105,7 @@ img {
 
 .potential-room {
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .potential-room:hover {

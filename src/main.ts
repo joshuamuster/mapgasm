@@ -48,7 +48,6 @@ function renderGrid() {
   gridContainer.innerHTML = '';
 
   const potentialRooms = new Map<string, { x: number; y: number }>();
-  const forbiddenKeys = new Set<string>();
   const directions: { dir: 'N' | 'E' | 'S' | 'W'; dx: number; dy: number }[] = [
     { dir: 'N', dx: 0, dy: 1 },
     { dir: 'E', dx: 1, dy: 0 },
@@ -62,20 +61,18 @@ function renderGrid() {
       const ny = placed.y + dy;
       const key = `${nx},${ny}`;
 
-      // A direction is forbidden if it has "none" opening, or it's the South of the starting room
-      if (
-        placed.room.openings?.[dir]?.kind === 'none' ||
-        (placed.x === 0 && placed.y === 0 && dir === 'S')
-      ) {
-        forbiddenKeys.add(key);
-      } else if (!placedRooms.some((r) => r.x === nx && r.y === ny)) {
-        potentialRooms.set(key, { x: nx, y: ny });
+      const openingKind = placed.room.openings?.[dir]?.kind || 'none';
+      const isStartingRoomSouth = placed.x === 0 && placed.y === 0 && dir === 'S';
+
+      // Only add a potential room if the current side has something other than "none"
+      // and it's not the South side of the starting room (to keep the start at the bottom)
+      if (openingKind !== 'none' && !isStartingRoomSouth) {
+        if (!placedRooms.some((r) => r.x === nx && r.y === ny)) {
+          potentialRooms.set(key, { x: nx, y: ny });
+        }
       }
     });
   });
-
-  // Remove any potential rooms that are forbidden by another neighbor
-  forbiddenKeys.forEach((key) => potentialRooms.delete(key));
 
   const allCoords = [
     ...placedRooms.map(r => ({ x: r.x, y: r.y })),
@@ -103,9 +100,14 @@ function renderGrid() {
 
       const placed = placedRooms.find(r => r.x === x && r.y === y);
       if (placed) {
+        box.classList.add('placed-room');
         if (activeRoomCoord && activeRoomCoord.x === x && activeRoomCoord.y === y) {
           box.classList.add('active-room');
         }
+        box.addEventListener('click', () => {
+          activeRoomCoord = { x, y };
+          renderGrid();
+        });
         const img = document.createElement('img');
         img.src = placed.room.image;
         img.alt = placed.room.name;
