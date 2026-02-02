@@ -47,28 +47,35 @@ function renderGrid() {
 
   gridContainer.innerHTML = '';
 
-  const potentialRooms = new Map<string, { x: number; y: number; fromDir: 'N' | 'E' | 'S' | 'W' }>();
-  
-  placedRooms.forEach(placed => {
-    const directions: { dir: 'N' | 'E' | 'S' | 'W'; dx: number; dy: number }[] = [
-      { dir: 'N', dx: 0, dy: 1 },
-      { dir: 'E', dx: 1, dy: 0 },
-      { dir: 'S', dx: 0, dy: -1 },
-      { dir: 'W', dx: -1, dy: 0 },
-    ];
+  const potentialRooms = new Map<string, { x: number; y: number }>();
+  const forbiddenKeys = new Set<string>();
+  const directions: { dir: 'N' | 'E' | 'S' | 'W'; dx: number; dy: number }[] = [
+    { dir: 'N', dx: 0, dy: 1 },
+    { dir: 'E', dx: 1, dy: 0 },
+    { dir: 'S', dx: 0, dy: -1 },
+    { dir: 'W', dx: -1, dy: 0 },
+  ];
 
+  placedRooms.forEach((placed) => {
     directions.forEach(({ dir, dx, dy }) => {
-      // Keep cave-room-0 at the "very bottom" by ignoring its South side for potential growth at the start.
-      if (placed.x === 0 && placed.y === 0 && dir === 'S') return;
-
       const nx = placed.x + dx;
       const ny = placed.y + dy;
       const key = `${nx},${ny}`;
-      if (!placedRooms.some((r) => r.x === nx && r.y === ny)) {
-        potentialRooms.set(key, { x: nx, y: ny, fromDir: dir });
+
+      // A direction is forbidden if it has "none" opening, or it's the South of the starting room
+      if (
+        placed.room.openings?.[dir]?.kind === 'none' ||
+        (placed.x === 0 && placed.y === 0 && dir === 'S')
+      ) {
+        forbiddenKeys.add(key);
+      } else if (!placedRooms.some((r) => r.x === nx && r.y === ny)) {
+        potentialRooms.set(key, { x: nx, y: ny });
       }
     });
   });
+
+  // Remove any potential rooms that are forbidden by another neighbor
+  forbiddenKeys.forEach((key) => potentialRooms.delete(key));
 
   const allCoords = [
     ...placedRooms.map(r => ({ x: r.x, y: r.y })),
