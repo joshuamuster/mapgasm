@@ -20,20 +20,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "E": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         }
       }
     },
@@ -46,20 +42,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -72,19 +64,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -97,20 +86,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -123,20 +108,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -149,20 +130,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -175,19 +152,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "none"
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -200,20 +174,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -226,20 +196,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -252,20 +218,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -278,19 +240,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "S": {
-          "kind": "none"
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -303,20 +262,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -329,20 +284,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -355,20 +306,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -381,19 +328,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
-        },
-        "S": {
           "kind": "none"
         },
+        "S": {
+          "kind": "door"
+        },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -406,20 +350,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -432,20 +372,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         }
       }
     },
@@ -458,20 +394,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         }
       }
     },
@@ -484,19 +416,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -509,20 +438,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -535,20 +460,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -558,23 +479,19 @@
       "image": "/rooms/cave/cave-room-21.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "hallway"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -584,22 +501,19 @@
       "image": "/rooms/cave/cave-room-22.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "hallway", "trap"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
-        },
-        "S": {
           "kind": "none"
         },
+        "S": {
+          "kind": "door"
+        },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -609,23 +523,19 @@
       "image": "/rooms/cave/cave-room-23.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "deadend"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -635,23 +545,19 @@
       "image": "/rooms/cave/cave-room-24.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "stairs", "up"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -661,23 +567,19 @@
       "image": "/rooms/cave/cave-room-25.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "stairs", "down"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -687,22 +589,19 @@
       "image": "/rooms/cave/cave-room-26.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "stairs", "up"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
-        },
-        "E": {
-          "kind": "wall",
-          "span": [1, 12]
-        },
-        "S": {
           "kind": "none"
         },
+        "E": {
+          "kind": "none"
+        },
+        "S": {
+          "kind": "door"
+        },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -712,23 +611,19 @@
       "image": "/rooms/cave/cave-room-27.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "stairs", "down"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -738,23 +633,19 @@
       "image": "/rooms/cave/cave-room-28.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "corridor"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -764,23 +655,19 @@
       "image": "/rooms/cave/cave-room-29.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "corridor"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         }
       }
     },
@@ -790,22 +677,19 @@
       "image": "/rooms/cave/cave-room-30.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "corridor"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -818,20 +702,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         }
       }
     },
@@ -841,23 +721,19 @@
       "image": "/rooms/cave/cave-room-32.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -867,23 +743,19 @@
       "image": "/rooms/cave/cave-room-33.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -893,22 +765,19 @@
       "image": "/rooms/cave/cave-room-34.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
-        },
-        "E": {
-          "kind": "wall",
-          "span": [1, 12]
-        },
-        "S": {
           "kind": "none"
         },
+        "E": {
+          "kind": "none"
+        },
+        "S": {
+          "kind": "door"
+        },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -921,20 +790,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -944,23 +809,19 @@
       "image": "/rooms/cave/cave-room-36.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "traps"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -970,23 +831,19 @@
       "image": "/rooms/cave/cave-room-37.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "traps", "treasure"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -996,22 +853,19 @@
       "image": "/rooms/cave/cave-room-38.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "traps"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
-        },
-        "S": {
           "kind": "none"
         },
+        "S": {
+          "kind": "door"
+        },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         }
       }
     },
@@ -1021,23 +875,19 @@
       "image": "/rooms/cave/cave-room-39.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "chasm"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1047,23 +897,19 @@
       "image": "/rooms/cave/cave-room-40.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "chasm"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1073,23 +919,19 @@
       "image": "/rooms/cave/cave-room-41.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "chasm"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "none"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1102,19 +944,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1127,20 +966,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "_______"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         }
       }
     },
@@ -1153,20 +988,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "_______"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         }
       }
     },
@@ -1179,20 +1010,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         }
       }
     },
@@ -1205,19 +1032,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "S": {
-          "kind": "none"
+          "kind": "_______"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         }
       }
     },
@@ -1230,20 +1054,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "_______"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         }
       }
     },
@@ -1256,20 +1076,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "_______"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         }
       }
     },
@@ -1282,20 +1098,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         }
       }
     },
@@ -1308,19 +1120,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "S": {
-          "kind": "none"
+          "kind": "_______"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         }
       }
     },
@@ -1333,20 +1142,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "_______"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "_______"
         }
       }
     },
@@ -1359,20 +1164,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1385,20 +1186,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1411,19 +1208,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1436,20 +1230,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1462,20 +1252,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1488,20 +1274,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1514,19 +1296,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1539,20 +1318,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1565,20 +1340,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1591,20 +1362,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1617,19 +1384,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1642,20 +1406,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1668,20 +1428,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1694,20 +1450,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1720,19 +1472,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1745,20 +1494,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1771,20 +1516,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1797,20 +1538,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1823,19 +1560,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1848,20 +1582,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1874,20 +1604,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1900,20 +1626,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1926,19 +1648,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1951,20 +1670,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -1977,20 +1692,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2003,20 +1714,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2029,19 +1736,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2054,20 +1758,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2080,20 +1780,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2106,20 +1802,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2132,19 +1824,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2157,20 +1846,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2183,20 +1868,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2209,20 +1890,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2235,19 +1912,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2260,20 +1934,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2286,20 +1956,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2312,20 +1978,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2338,19 +2000,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2363,20 +2022,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2389,20 +2044,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2415,20 +2066,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2441,19 +2088,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2466,20 +2110,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2492,20 +2132,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2518,20 +2154,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2544,19 +2176,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
           "kind": "none"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2569,20 +2198,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     },
@@ -2595,20 +2220,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "E": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         },
         "S": {
-          "kind": "door",
-          "span": [6, 7]
+          "kind": "door"
         },
         "W": {
-          "kind": "wall",
-          "span": [1, 12]
+          "kind": "wall"
         }
       }
     }
