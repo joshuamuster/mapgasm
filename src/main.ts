@@ -8,6 +8,7 @@ interface Room {
   id: string;
   name: string;
   image: string;
+  tags?: string[];
   openings?: {
     N?: Opening;
     E?: Opening;
@@ -144,6 +145,11 @@ function handlePotentialClick(x: number, y: number) {
     .filter((c): c is { dir: 'N' | 'E' | 'S' | 'W'; kind: string } => c !== null);
 
   const candidates = allRooms.filter((candidate) => {
+    // Skip rooms with "entrance" tag during generation
+    if (candidate.tags?.includes('entrance')) {
+      return false;
+    }
+
     return constraints.every((c) => {
       const candidateKind = candidate.openings?.[c.dir]?.kind || 'none';
       return candidateKind === c.kind;
