@@ -24,6 +24,7 @@ interface PlacedRoom {
 
 let allRooms: Room[] = [];
 let placedRooms: PlacedRoom[] = [];
+let activeRoomCoord: { x: number; y: number } | null = null;
 
 async function initGrid() {
   const response = await fetch('/rooms.json');
@@ -33,6 +34,7 @@ async function initGrid() {
   const startRoom = allRooms.find(r => r.id === 'cave-room-0');
   if (startRoom) {
     placedRooms.push({ x: 0, y: 0, room: startRoom });
+    activeRoomCoord = { x: 0, y: 0 };
   }
   
   renderGrid();
@@ -98,6 +100,9 @@ function renderGrid() {
 
       const placed = placedRooms.find(r => r.x === x && r.y === y);
       if (placed) {
+        if (activeRoomCoord && activeRoomCoord.x === x && activeRoomCoord.y === y) {
+          box.classList.add('active-room');
+        }
         const img = document.createElement('img');
         img.src = placed.room.image;
         img.alt = placed.room.name;
@@ -131,6 +136,7 @@ function handlePotentialClick(x: number, y: number, fromDir: 'N' | 'E' | 'S' | '
   if (candidates.length > 0) {
     const nextRoom = candidates[Math.floor(Math.random() * candidates.length)];
     placedRooms.push({ x, y, room: nextRoom });
+    activeRoomCoord = { x, y };
     renderGrid();
   }
 }
