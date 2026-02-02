@@ -12,6 +12,32 @@
   },
   "rooms": [
     {
+      "id": "cave-room-0",
+      "name": "open plan",
+      "image": "/rooms/cave/cave-room-17.jpg",
+      "allowRotation": true,
+      "weight": 1,
+      "tags": ["stone"],
+      "openings": {
+        "N": {
+          "kind": "door",
+          "span": [6, 7]
+        },
+        "E": {
+          "kind": "door",
+          "span": [6, 7]
+        },
+        "S": {
+          "kind": "door",
+          "span": [6, 7]
+        },
+        "W": {
+          "kind": "door",
+          "span": [6, 7]
+        }
+      }
+    },
+    {
       "id": "cave-room-1",
       "name": "open plan",
       "image": "/rooms/cave/cave-room-1.jpg",

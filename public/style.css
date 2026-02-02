@@ -20,14 +20,11 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     min-width: 320px;
     min-height: 100vh;
     align-items: center;
-
-    background-image: url("background.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color: #000000;
 }
 
 h1 {
@@ -41,13 +38,14 @@ h1 {
 }
 
 #app {
-    max-width: 1280px;
+    width: 100%;
 }
 
 .logo {
-    margin-top: 45px;
-    margin-left: 20%;
-    align-self: flex-start;
+    position: absolute;
+    top: 45px;
+    left: 20%;
+    z-index: 10;
 }
 
 img {
@@ -57,16 +55,23 @@ img {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 100px);
-    grid-auto-rows: 100px;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-auto-rows: 200px;
     gap: 0;
     justify-content: center;
-    padding: 20px;
+    align-content: end;
+    min-height: 100vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(to right, #222 1px, transparent 1px),
+        linear-gradient(to bottom, #222 1px, transparent 1px);
+    background-size: 200px 200px;
+    background-position: center bottom;
 }
 
 .grid-item {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     overflow: hidden;
 }
 

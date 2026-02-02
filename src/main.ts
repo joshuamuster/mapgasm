@@ -12,7 +12,8 @@ async function initGrid() {
 
   const gridContainer = document.getElementById('grid-container');
   if (gridContainer) {
-    rooms.forEach((room) => {
+    const filteredRooms = rooms.filter(room => room.id === 'cave-room-0');
+    filteredRooms.forEach((room) => {
       const item = document.createElement('div');
       item.className = 'grid-item';
       
