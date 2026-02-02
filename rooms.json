@@ -680,16 +680,16 @@
       "tags": ["stone", "corridor"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
-          "kind": "wall"
+          "kind": "door"
         },
         "S": {
-          "kind": "none"
+          "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "door"
         }
       }
     },
@@ -1145,13 +1145,13 @@
           "kind": "door"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1167,13 +1167,13 @@
           "kind": "door"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1192,7 +1192,7 @@
           "kind": "wall"
         },
         "S": {
-          "kind": "door"
+          "kind": "none"
         },
         "W": {
           "kind": "wall"
@@ -1406,7 +1406,7 @@
       "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "train"
+          "kind": "track"
         },
         "E": {
           "kind": "none"
@@ -1469,19 +1469,19 @@
       "image": "/rooms/cave/cave-room-66.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
-        },
-        "E": {
-          "kind": "wall"
-        },
-        "S": {
           "kind": "none"
         },
+        "E": {
+          "kind": "none"
+        },
+        "S": {
+          "kind": "door"
+        },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1491,10 +1491,10 @@
       "image": "/rooms/cave/cave-room-67.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "clockwork"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
           "kind": "wall"
@@ -1513,19 +1513,19 @@
       "image": "/rooms/cave/cave-room-68.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "starting"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
-          "kind": "wall"
+          "kind": "door"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "door"
         }
       }
     },
@@ -1538,16 +1538,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "none"
         },
         "E": {
-          "kind": "wall"
+          "kind": "door"
         },
         "S": {
-          "kind": "wall"
+          "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1560,16 +1560,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
-        },
-        "E": {
-          "kind": "wall"
-        },
-        "S": {
           "kind": "none"
         },
+        "E": {
+          "kind": "none"
+        },
+        "S": {
+          "kind": "tracks"
+        },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1579,10 +1579,10 @@
       "image": "/rooms/cave/cave-room-71.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "train"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
           "kind": "wall"
@@ -1604,13 +1604,13 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "none"
         },
         "E": {
           "kind": "wall"
         },
         "S": {
-          "kind": "door"
+          "kind": "none"
         },
         "W": {
           "kind": "wall"
@@ -1623,19 +1623,19 @@
       "image": "/rooms/cave/cave-room-73.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "none"
         },
         "E": {
-          "kind": "wall"
+          "kind": "door"
         },
         "S": {
-          "kind": "wall"
+          "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "door"
         }
       }
     },
@@ -1645,19 +1645,19 @@
       "image": "/rooms/cave/cave-room-74.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
-        },
-        "E": {
-          "kind": "wall"
-        },
-        "S": {
           "kind": "none"
         },
+        "E": {
+          "kind": "none"
+        },
+        "S": {
+          "kind": "door"
+        },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1670,16 +1670,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "none"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
-          "kind": "door"
+          "kind": "none"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1692,16 +1692,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
-          "kind": "wall"
+          "kind": "waterdoor"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "waterdoor"
         }
       }
     },
@@ -1714,16 +1714,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "tracks"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
-          "kind": "wall"
+          "kind": "tracks"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1736,16 +1736,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
-        },
-        "E": {
-          "kind": "wall"
-        },
-        "S": {
           "kind": "none"
         },
+        "E": {
+          "kind": "train"
+        },
+        "S": {
+          "kind": "train"
+        },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1758,16 +1758,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1777,13 +1777,13 @@
       "image": "/rooms/cave/cave-room-80.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "chasm"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "none"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
           "kind": "door"
@@ -1799,10 +1799,10 @@
       "image": "/rooms/cave/cave-room-81.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "entrance"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
           "kind": "wall"
@@ -1821,19 +1821,19 @@
       "image": "/rooms/cave/cave-room-82.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
-          "kind": "wall"
-        },
-        "S": {
           "kind": "none"
         },
+        "S": {
+          "kind": "door"
+        },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1843,19 +1843,19 @@
       "image": "/rooms/cave/cave-room-83.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1865,7 +1865,7 @@
       "image": "/rooms/cave/cave-room-84.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "entrance"],
       "openings": {
         "N": {
           "kind": "wall"
@@ -1887,7 +1887,7 @@
       "image": "/rooms/cave/cave-room-85.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "outside"],
       "openings": {
         "N": {
           "kind": "wall"
@@ -1909,16 +1909,16 @@
       "image": "/rooms/cave/cave-room-86.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "lava", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
           "kind": "wall"
         },
         "S": {
-          "kind": "none"
+          "kind": "door"
         },
         "W": {
           "kind": "wall"
@@ -1931,10 +1931,10 @@
       "image": "/rooms/cave/cave-room-87.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "special", "lava"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
           "kind": "wall"
@@ -1943,7 +1943,7 @@
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1953,19 +1953,19 @@
       "image": "/rooms/cave/cave-room-88.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
           "kind": "wall"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
-          "kind": "door"
+          "kind": "wall"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1975,19 +1975,19 @@
       "image": "/rooms/cave/cave-room-89.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "none"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
-          "kind": "wall"
+          "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -1997,19 +1997,19 @@
       "image": "/rooms/cave/cave-room-90.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
-          "kind": "wall"
-        },
-        "S": {
           "kind": "none"
         },
+        "S": {
+          "kind": "waterwall"
+        },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2022,16 +2022,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "waterwall"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
-          "kind": "door"
+          "kind": "waterwall"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2044,16 +2044,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
-        },
-        "E": {
-          "kind": "wall"
-        },
-        "S": {
           "kind": "door"
         },
+        "E": {
+          "kind": "none"
+        },
+        "S": {
+          "kind": "waterwall"
+        },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2066,16 +2066,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "waterwall"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
-          "kind": "wall"
+          "kind": "waterwall"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2088,16 +2088,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "waterwall"
         },
         "E": {
-          "kind": "wall"
-        },
-        "S": {
           "kind": "none"
         },
+        "S": {
+          "kind": "waterwall"
+        },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2110,16 +2110,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "waterwall"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2132,16 +2132,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2154,16 +2154,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "none"
         },
         "E": {
-          "kind": "wall"
+          "kind": "door"
         },
         "S": {
-          "kind": "wall"
+          "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2176,16 +2176,16 @@
       "tags": ["stone"],
       "openings": {
         "N": {
-          "kind": "wall"
-        },
-        "E": {
-          "kind": "wall"
-        },
-        "S": {
           "kind": "none"
         },
+        "E": {
+          "kind": "door"
+        },
+        "S": {
+          "kind": "door"
+        },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2195,19 +2195,19 @@
       "image": "/rooms/cave/cave-room-99.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "none"
         },
         "E": {
-          "kind": "wall"
+          "kind": "door"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     },
@@ -2217,19 +2217,19 @@
       "image": "/rooms/cave/cave-room-100.jpg",
       "allowRotation": true,
       "weight": 0.7,
-      "tags": ["stone"],
+      "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "wall"
+          "kind": "door"
         },
         "E": {
-          "kind": "wall"
+          "kind": "none"
         },
         "S": {
           "kind": "door"
         },
         "W": {
-          "kind": "wall"
+          "kind": "none"
         }
       }
     }

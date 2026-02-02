@@ -57,19 +57,14 @@ function renderGrid() {
     ];
 
     directions.forEach(({ dir, dx, dy }) => {
-      // In the previous task, only N, E, W were implemented for cave-room-0.
-      // We will follow that for the starting room, but allow all directions for others,
-      // or just allow all directions generally as it makes sense for a map.
-      // However, to keep cave-room-0 at the "very bottom", let's ignore its South door if it's at (0,0).
+      // Keep cave-room-0 at the "very bottom" by ignoring its South side for potential growth at the start.
       if (placed.x === 0 && placed.y === 0 && dir === 'S') return;
 
-      if (placed.room.openings?.[dir]?.kind === 'door') {
-        const nx = placed.x + dx;
-        const ny = placed.y + dy;
-        const key = `${nx},${ny}`;
-        if (!placedRooms.some(r => r.x === nx && r.y === ny)) {
-          potentialRooms.set(key, { x: nx, y: ny, fromDir: dir });
-        }
+      const nx = placed.x + dx;
+      const ny = placed.y + dy;
+      const key = `${nx},${ny}`;
+      if (!placedRooms.some((r) => r.x === nx && r.y === ny)) {
+        potentialRooms.set(key, { x: nx, y: ny, fromDir: dir });
       }
     });
   });
