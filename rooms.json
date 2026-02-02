@@ -290,7 +290,7 @@
           "kind": "none"
         },
         "S": {
-          "kind": "door"
+          "kind": "none"
         },
         "W": {
           "kind": "wall"

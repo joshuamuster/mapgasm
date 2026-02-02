@@ -113,7 +113,7 @@ function renderGrid() {
         if (potential) {
           box.classList.add('potential-room');
           box.addEventListener('click', () => {
-            handlePotentialClick(potential.x, potential.y, potential.fromDir);
+            handlePotentialClick(potential.x, potential.y);
           });
         }
       }
@@ -122,22 +122,46 @@ function renderGrid() {
   }
 }
 
-function handlePotentialClick(x: number, y: number, fromDir: 'N' | 'E' | 'S' | 'W') {
+function handlePotentialClick(x: number, y: number) {
   const oppositeDirMap: Record<string, 'N' | 'E' | 'S' | 'W'> = {
     N: 'S',
     E: 'W',
     S: 'N',
     W: 'E',
   };
-  const neededDir = oppositeDirMap[fromDir];
 
-  const candidates = allRooms.filter((r) => r.openings?.[neededDir]?.kind === 'door');
+  const directions: { dir: 'N' | 'E' | 'S' | 'W'; dx: number; dy: number }[] = [
+    { dir: 'N', dx: 0, dy: 1 },
+    { dir: 'E', dx: 1, dy: 0 },
+    { dir: 'S', dx: 0, dy: -1 },
+    { dir: 'W', dx: -1, dy: 0 },
+  ];
+
+  // Find all existing neighbors to determine constraints
+  const constraints = directions
+    .map(({ dir, dx, dy }) => {
+      const neighbor = placedRooms.find((r) => r.x === x + dx && r.y === y + dy);
+      if (neighbor) {
+        return { dir, kind: neighbor.room.openings?.[oppositeDirMap[dir]]?.kind || 'none' };
+      }
+      return null;
+    })
+    .filter((c): c is { dir: 'N' | 'E' | 'S' | 'W'; kind: string } => c !== null);
+
+  const candidates = allRooms.filter((candidate) => {
+    return constraints.every((c) => {
+      const candidateKind = candidate.openings?.[c.dir]?.kind || 'none';
+      return candidateKind === c.kind;
+    });
+  });
 
   if (candidates.length > 0) {
     const nextRoom = candidates[Math.floor(Math.random() * candidates.length)];
     placedRooms.push({ x, y, room: nextRoom });
     activeRoomCoord = { x, y };
     renderGrid();
+  } else {
+    console.warn(`No suitable room found at (${x}, ${y}) that matches all adjacent walls/doors.`);
   }
 }
 
