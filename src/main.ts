@@ -16,48 +16,122 @@ interface Room {
   };
 }
 
+interface PlacedRoom {
+  x: number;
+  y: number;
+  room: Room;
+}
+
+let allRooms: Room[] = [];
+let placedRooms: PlacedRoom[] = [];
+
 async function initGrid() {
   const response = await fetch('/rooms.json');
   const data = await response.json();
-  const rooms: Room[] = data.rooms;
+  allRooms = data.rooms;
+  
+  const startRoom = allRooms.find(r => r.id === 'cave-room-0');
+  if (startRoom) {
+    placedRooms.push({ x: 0, y: 0, room: startRoom });
+  }
+  
+  renderGrid();
+}
 
+function renderGrid() {
   const gridContainer = document.getElementById('grid-container');
-  if (gridContainer) {
-    gridContainer.innerHTML = '';
-    const filteredRooms = rooms.filter((room) => room.id === 'cave-room-0');
-    
-    filteredRooms.forEach((room) => {
-      // To keep the room centered at the bottom, we create a 3x2 grid area.
-      // Row 1: [Empty] [North] [Empty]
-      // Row 2: [West]  [Room]  [East]
-      
-      const gridPositions: { key: string; r: number; c: number; dir?: 'N' | 'E' | 'W' }[] = [
-        { key: 'nw', r: 1, c: 1 },
-        { key: 'n', r: 1, c: 2, dir: 'N' },
-        { key: 'ne', r: 1, c: 3 },
-        { key: 'w', r: 2, c: 1, dir: 'W' },
-        { key: 'room', r: 2, c: 2 },
-        { key: 'e', r: 2, c: 3, dir: 'E' },
-      ];
+  if (!gridContainer) return;
 
-      gridPositions.forEach((pos) => {
-        const box = document.createElement('div');
-        box.className = 'grid-item';
-        box.style.gridRow = pos.r.toString();
-        box.style.gridColumn = pos.c.toString();
+  gridContainer.innerHTML = '';
 
-        if (pos.key === 'room') {
-          const img = document.createElement('img');
-          img.src = room.image;
-          img.alt = room.name;
-          img.title = room.name;
-          box.appendChild(img);
-        } else if (pos.dir && room.openings?.[pos.dir]?.kind === 'door') {
-          box.classList.add('potential-room');
+  const potentialRooms = new Map<string, { x: number; y: number; fromDir: 'N' | 'E' | 'S' | 'W' }>();
+  
+  placedRooms.forEach(placed => {
+    const directions: { dir: 'N' | 'E' | 'S' | 'W'; dx: number; dy: number }[] = [
+      { dir: 'N', dx: 0, dy: 1 },
+      { dir: 'E', dx: 1, dy: 0 },
+      { dir: 'S', dx: 0, dy: -1 },
+      { dir: 'W', dx: -1, dy: 0 },
+    ];
+
+    directions.forEach(({ dir, dx, dy }) => {
+      // In the previous task, only N, E, W were implemented for cave-room-0.
+      // We will follow that for the starting room, but allow all directions for others,
+      // or just allow all directions generally as it makes sense for a map.
+      // However, to keep cave-room-0 at the "very bottom", let's ignore its South door if it's at (0,0).
+      if (placed.x === 0 && placed.y === 0 && dir === 'S') return;
+
+      if (placed.room.openings?.[dir]?.kind === 'door') {
+        const nx = placed.x + dx;
+        const ny = placed.y + dy;
+        const key = `${nx},${ny}`;
+        if (!placedRooms.some(r => r.x === nx && r.y === ny)) {
+          potentialRooms.set(key, { x: nx, y: ny, fromDir: dir });
         }
-        gridContainer.appendChild(box);
-      });
+      }
     });
+  });
+
+  const allCoords = [
+    ...placedRooms.map(r => ({ x: r.x, y: r.y })),
+    ...Array.from(potentialRooms.values()).map(p => ({ x: p.x, y: p.y }))
+  ];
+
+  if (allCoords.length === 0) return;
+
+  const minX = Math.min(...allCoords.map(c => c.x));
+  const maxX = Math.max(...allCoords.map(c => c.x));
+  const minY = Math.min(...allCoords.map(c => c.y));
+  const maxY = Math.max(...allCoords.map(c => c.y));
+
+  // Maintain symmetry to keep (0,0) centered
+  const absMaxX = Math.max(Math.abs(minX), Math.abs(maxX));
+  const rangeMinX = -absMaxX;
+  const rangeMaxX = absMaxX;
+
+  for (let y = maxY; y >= minY; y--) {
+    for (let x = rangeMinX; x <= rangeMaxX; x++) {
+      const box = document.createElement('div');
+      box.className = 'grid-item';
+      box.style.gridRow = (maxY - y + 1).toString();
+      box.style.gridColumn = (x - rangeMinX + 1).toString();
+
+      const placed = placedRooms.find(r => r.x === x && r.y === y);
+      if (placed) {
+        const img = document.createElement('img');
+        img.src = placed.room.image;
+        img.alt = placed.room.name;
+        img.title = placed.room.name;
+        box.appendChild(img);
+      } else {
+        const potential = potentialRooms.get(`${x},${y}`);
+        if (potential) {
+          box.classList.add('potential-room');
+          box.addEventListener('click', () => {
+            handlePotentialClick(potential.x, potential.y, potential.fromDir);
+          });
+        }
+      }
+      gridContainer.appendChild(box);
+    }
+  }
+}
+
+function handlePotentialClick(x: number, y: number, fromDir: 'N' | 'E' | 'S' | 'W') {
+  const oppositeDirMap: Record<string, 'N' | 'E' | 'S' | 'W'> = {
+    N: 'S',
+    E: 'W',
+    S: 'N',
+    W: 'E',
+  };
+  const neededDir = oppositeDirMap[fromDir];
+
+  const candidates = allRooms.filter((r) => r.openings?.[neededDir]?.kind === 'door');
+
+  if (candidates.length > 0) {
+    const nextRoom = candidates[Math.floor(Math.random() * candidates.length)];
+    placedRooms.push({ x, y, room: nextRoom });
+    renderGrid();
   }
 }
 
