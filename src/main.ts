@@ -9,6 +9,8 @@ interface Room {
   name: string;
   image: string;
   tags?: string[];
+  allowRotation?: boolean;
+  weight?: number;
   openings?: {
     N?: Opening;
     E?: Opening;
@@ -21,24 +23,338 @@ interface PlacedRoom {
   x: number;
   y: number;
   room: Room;
+  rotation: number;
 }
 
 let allRooms: Room[] = [];
 let placedRooms: PlacedRoom[] = [];
 let activeRoomCoord: { x: number; y: number } | null = null;
 
+// Panning and Zooming state
+let isDragging = false;
+let dragStartX = 0;
+let dragStartY = 0;
+let offsetX = 0;
+let offsetY = 0;
+let scale = 1;
+
+// Touch state for pinching
+let lastTouchDistance = 0;
+let lastTouchMidX = 0;
+let lastTouchMidY = 0;
+
+// Grid boundaries for recentering
+let currentRangeMinX: number | null = null;
+let currentMaxY: number | null = null;
+
+const dirList: ("N" | "E" | "S" | "W")[] = ["N", "E", "S", "W"];
+
+function rotateActiveRoom() {
+  if (!activeRoomCoord) return;
+  const { x, y } = activeRoomCoord;
+  const placedIdx = placedRooms.findIndex((r) => r.x === x && r.y === y);
+  if (placedIdx === -1) return;
+
+  const placed = placedRooms[placedIdx];
+  const constraints = getConstraints(x, y);
+
+  const validRotations: number[] = [];
+  const possibleRotations = placed.room.allowRotation ? [0, 1, 2, 3] : [0];
+
+  possibleRotations.forEach((rot) => {
+    const matches = constraints.every((c) => {
+      const kind = getOpeningKind(placed.room, rot, c.dir);
+      return isMatching(kind, c.kind);
+    });
+    if (matches) validRotations.push(rot);
+  });
+
+  if (validRotations.length > 1) {
+    const currentRotIdx = validRotations.indexOf(placed.rotation);
+    const nextRotIdx = (currentRotIdx + 1) % validRotations.length;
+    placed.rotation = validRotations[nextRotIdx];
+    renderGrid();
+  }
+}
+
+function rotateEntireMap() {
+  placedRooms.forEach((pr) => {
+    const oldX = pr.x;
+    const oldY = pr.y;
+    pr.x = oldY;
+    pr.y = -oldX;
+    pr.rotation = (pr.rotation + 1) % 4;
+  });
+
+  if (activeRoomCoord) {
+    const oldX = activeRoomCoord.x;
+    const oldY = activeRoomCoord.y;
+    activeRoomCoord.x = oldY;
+    activeRoomCoord.y = -oldX;
+  }
+
+  // Clear current boundaries so they are recalculated
+  currentRangeMinX = null;
+  currentMaxY = null;
+
+  renderGrid();
+  recenter();
+}
+
+function getOpeningKind(
+  room: Room,
+  rotation: number,
+  gridDir: "N" | "E" | "S" | "W"
+): string {
+  const gIndex = dirList.indexOf(gridDir);
+  const oIndex = (gIndex - rotation + 4) % 4;
+  const oDir = dirList[oIndex];
+  return room.openings?.[oDir]?.kind || "none";
+}
+
+function isMatching(k1: string, k2: string): boolean {
+  if (k1 === k2) return true;
+  // Treat 'none' and 'wall' as equivalent connection types
+  if ((k1 === 'none' || k1 === 'wall') && (k2 === 'none' || k2 === 'wall')) return true;
+  // Treat 'track' and 'tracks' as equivalent
+  if ((k1 === 'track' || k1 === 'tracks') && (k2 === 'track' || k2 === 'tracks')) return true;
+  // Treat 'waterdoor' and 'waterwall' as equivalent
+  if ((k1 === 'waterdoor' || k1 === 'waterwall') && (k2 === 'waterdoor' || k2 === 'waterwall')) return true;
+  return false;
+}
+
+function getConstraints(
+  x: number,
+  y: number
+): { dir: "N" | "E" | "S" | "W"; kind: string }[] {
+  const oppositeDirMap: Record<string, "N" | "E" | "S" | "W"> = {
+    N: "S",
+    E: "W",
+    S: "N",
+    W: "E",
+  };
+
+  const directions: { dir: "N" | "E" | "S" | "W"; dx: number; dy: number }[] = [
+    { dir: "N", dx: 0, dy: 1 },
+    { dir: "E", dx: 1, dy: 0 },
+    { dir: "S", dx: 0, dy: -1 },
+    { dir: "W", dx: -1, dy: 0 },
+  ];
+
+  return directions
+    .map(({ dir, dx, dy }) => {
+      const neighbor = placedRooms.find((r) => r.x === x + dx && r.y === y + dy);
+      if (neighbor) {
+        const neighborOpeningKind = getOpeningKind(
+          neighbor.room,
+          neighbor.rotation,
+          oppositeDirMap[dir]
+        );
+        return { dir, kind: neighborOpeningKind };
+      }
+      return null;
+    })
+    .filter((c): c is { dir: "N" | "E" | "S" | "W"; kind: string } => c !== null);
+}
+
 async function initGrid() {
-  const response = await fetch('/rooms.json');
+  const response = await fetch("/rooms.json");
   const data = await response.json();
   allRooms = data.rooms;
-  
-  const startRoom = allRooms.find(r => r.id === 'cave-room-0');
+
+  const startRoom = allRooms.find((r) => r.id === "cave-room-0");
   if (startRoom) {
-    placedRooms.push({ x: 0, y: 0, room: startRoom });
+    placedRooms.push({ x: 0, y: 0, room: startRoom, rotation: 0 });
     activeRoomCoord = { x: 0, y: 0 };
   }
-  
+
   renderGrid();
+  recenter();
+  setupEventListeners();
+}
+
+function setupEventListeners() {
+  const app = document.getElementById('app');
+  const gridContainer = document.getElementById('grid-container');
+  const recenterLink = document.getElementById('recenter-link');
+  const centerStartButton = document.getElementById('center-start-button');
+  const centerActiveButton = document.getElementById('center-active-button');
+  const rotateMapButton = document.getElementById('rotate-map-button');
+
+  if (!app || !gridContainer) return;
+
+  const onStart = (clientX: number, clientY: number) => {
+    isDragging = true;
+    dragStartX = clientX - offsetX;
+    dragStartY = clientY - offsetY;
+    gridContainer.style.cursor = 'grabbing';
+  };
+
+  const onMove = (clientX: number, clientY: number) => {
+    if (!isDragging) return;
+    offsetX = clientX - dragStartX;
+    offsetY = clientY - dragStartY;
+    updateTransform();
+  };
+
+  const onEnd = () => {
+    isDragging = false;
+    gridContainer.style.cursor = 'grab';
+  };
+
+  app.addEventListener('mousedown', (e) => onStart(e.clientX, e.clientY));
+  window.addEventListener('mousemove', (e) => onMove(e.clientX, e.clientY));
+  window.addEventListener('mouseup', onEnd);
+
+  app.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      isDragging = false;
+      lastTouchDistance = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      lastTouchMidX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      lastTouchMidY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+    } else if (e.touches.length === 1) {
+      onStart(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const distance = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+
+      const factor = distance / lastTouchDistance;
+      zoomAt(midX, midY, factor, true);
+
+      lastTouchDistance = distance;
+      lastTouchMidX = midX;
+      lastTouchMidY = midY;
+    } else if (e.touches.length === 1) {
+      if (isDragging) {
+        onMove(e.touches[0].clientX, e.touches[0].clientY);
+        e.preventDefault();
+      }
+    }
+  }, { passive: false });
+  window.addEventListener('touchend', onEnd);
+
+  app.addEventListener(
+    'wheel',
+    (e) => {
+      e.preventDefault();
+      if (e.ctrlKey) {
+        // Pinch zoom on trackpad
+        const factor = Math.exp(-e.deltaY * 0.01);
+        zoomAt(e.clientX, e.clientY, factor);
+      } else {
+        offsetX -= e.deltaX;
+        offsetY -= e.deltaY;
+        updateTransform();
+      }
+    },
+    { passive: false }
+  );
+
+  if (recenterLink) {
+    recenterLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      recenter();
+    });
+  }
+
+  if (centerStartButton) {
+    centerStartButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      recenter(0, 0);
+    });
+  }
+
+  if (centerActiveButton) {
+    centerActiveButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      recenter();
+    });
+  }
+
+  if (rotateMapButton) {
+    rotateMapButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      rotateEntireMap();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'r') {
+      if (e.shiftKey) {
+        rotateEntireMap();
+      } else {
+        rotateActiveRoom();
+      }
+    }
+  });
+}
+
+function zoomAt(clientX: number, clientY: number, factor: number, isPinch = false) {
+  const newScale = Math.min(Math.max(scale * factor, 0.2), 5);
+  const actualFactor = newScale / scale;
+
+  if (isPinch) {
+    offsetX = clientX - (lastTouchMidX - offsetX) * actualFactor;
+    offsetY = clientY - (lastTouchMidY - offsetY) * actualFactor;
+  } else {
+    offsetX = clientX - (clientX - offsetX) * actualFactor;
+    offsetY = clientY - (clientY - offsetY) * actualFactor;
+  }
+
+  scale = newScale;
+  updateTransform();
+}
+
+function updateTransform() {
+  const gridContainer = document.getElementById('grid-container');
+  const app = document.getElementById('app');
+  if (gridContainer && app) {
+    gridContainer.style.transformOrigin = '0 0';
+    gridContainer.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+    app.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
+    app.style.backgroundSize = `${200 * scale}px ${200 * scale}px`;
+  }
+}
+
+function recenter(x?: number, y?: number) {
+  let targetCoordX = x;
+  let targetCoordY = y;
+
+  if (targetCoordX === undefined || targetCoordY === undefined) {
+    if (!activeRoomCoord) return;
+    targetCoordX = activeRoomCoord.x;
+    targetCoordY = activeRoomCoord.y;
+  }
+
+  if (currentRangeMinX === null || currentMaxY === null) return;
+
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+
+  // Each cell is 200x200. 
+  // The cell at (x, y) is at grid-relative position:
+  // left: (x - currentRangeMinX) * 200
+  // top: (currentMaxY - y) * 200
+  
+  const targetX = ((targetCoordX - currentRangeMinX) * 200 + 100) * scale;
+  const targetY = ((currentMaxY - targetCoordY) * 200 + 100) * scale;
+
+  offsetX = viewportWidth / 2 - targetX;
+  offsetY = viewportHeight / 2 - targetY;
+
+  updateTransform();
 }
 
 function renderGrid() {
@@ -46,6 +362,7 @@ function renderGrid() {
   if (!gridContainer) return;
 
   gridContainer.innerHTML = '';
+  gridContainer.style.cursor = 'grab';
 
   const potentialRooms = new Map<string, { x: number; y: number }>();
   const directions: { dir: 'N' | 'E' | 'S' | 'W'; dx: number; dy: number }[] = [
@@ -61,12 +378,14 @@ function renderGrid() {
       const ny = placed.y + dy;
       const key = `${nx},${ny}`;
 
-      const openingKind = placed.room.openings?.[dir]?.kind || 'none';
-      const isStartingRoomSouth = placed.x === 0 && placed.y === 0 && dir === 'S';
+      const openingKind = getOpeningKind(placed.room, placed.rotation, dir);
+      const isStartingRoomSouth =
+        placed.x === 0 && placed.y === 0 && dir === "S";
 
-      // Only add a potential room if the current side has something other than "none"
-      // and it's not the South side of the starting room (to keep the start at the bottom)
-      if (openingKind !== 'none' && !isStartingRoomSouth) {
+      // Only add a potential room if the current side has an expandable opening
+      // (not "none" or "wall") and it's not the South side of the starting room
+      const isExpandable = openingKind !== "none" && openingKind !== "wall";
+      if (isExpandable && !isStartingRoomSouth) {
         if (!placedRooms.some((r) => r.x === nx && r.y === ny)) {
           potentialRooms.set(key, { x: nx, y: ny });
         }
@@ -91,6 +410,17 @@ function renderGrid() {
   const rangeMinX = -absMaxX;
   const rangeMaxX = absMaxX;
 
+  // Adjust offset to keep content stable when grid boundaries expand
+  if (currentRangeMinX !== null && currentMaxY !== null) {
+    const dx = (rangeMinX - currentRangeMinX) * 200 * scale;
+    const dy = (maxY - currentMaxY) * 200 * scale;
+    offsetX += dx;
+    offsetY -= dy;
+  }
+
+  currentRangeMinX = rangeMinX;
+  currentMaxY = maxY;
+
   for (let y = maxY; y >= minY; y--) {
     for (let x = rangeMinX; x <= rangeMaxX; x++) {
       const box = document.createElement('div');
@@ -105,13 +435,20 @@ function renderGrid() {
           box.classList.add('active-room');
         }
         box.addEventListener('click', () => {
-          activeRoomCoord = { x, y };
-          renderGrid();
+          if (activeRoomCoord && activeRoomCoord.x === x && activeRoomCoord.y === y) {
+            rotateActiveRoom();
+          } else {
+            activeRoomCoord = { x, y };
+            renderGrid();
+          }
         });
         const img = document.createElement('img');
         img.src = placed.room.image;
         img.alt = placed.room.name;
-        img.title = placed.room.name;
+        img.title = `${placed.room.name} (Click to rotate)`;
+        if (placed.rotation !== 0) {
+          img.style.transform = `rotate(${placed.rotation * 90}deg)`;
+        }
         box.appendChild(img);
       } else {
         const potential = potentialRooms.get(`${x},${y}`);
@@ -125,53 +462,66 @@ function renderGrid() {
       gridContainer.appendChild(box);
     }
   }
+  updateTransform();
 }
 
 function handlePotentialClick(x: number, y: number) {
-  const oppositeDirMap: Record<string, 'N' | 'E' | 'S' | 'W'> = {
-    N: 'S',
-    E: 'W',
-    S: 'N',
-    W: 'E',
-  };
-
-  const directions: { dir: 'N' | 'E' | 'S' | 'W'; dx: number; dy: number }[] = [
-    { dir: 'N', dx: 0, dy: 1 },
-    { dir: 'E', dx: 1, dy: 0 },
-    { dir: 'S', dx: 0, dy: -1 },
-    { dir: 'W', dx: -1, dy: 0 },
-  ];
-
   // Find all existing neighbors to determine constraints
-  const constraints = directions
-    .map(({ dir, dx, dy }) => {
-      const neighbor = placedRooms.find((r) => r.x === x + dx && r.y === y + dy);
-      if (neighbor) {
-        return { dir, kind: neighbor.room.openings?.[oppositeDirMap[dir]]?.kind || 'none' };
-      }
-      return null;
-    })
-    .filter((c): c is { dir: 'N' | 'E' | 'S' | 'W'; kind: string } => c !== null);
+  const constraints = getConstraints(x, y);
 
-  const candidates = allRooms.filter((candidate) => {
+  const candidates: { room: Room; rotation: number }[] = [];
+
+  allRooms.forEach((candidate) => {
     // Skip rooms with "entrance" tag during generation
-    if (candidate.tags?.includes('entrance')) {
-      return false;
+    if (candidate.tags?.includes("entrance")) {
+      return;
     }
 
-    return constraints.every((c) => {
-      const candidateKind = candidate.openings?.[c.dir]?.kind || 'none';
-      return candidateKind === c.kind;
+    // Check unique rooms rule
+    if (placedRooms.some((pr) => pr.room.id === candidate.id)) {
+      return;
+    }
+
+    const rotations = candidate.allowRotation ? [0, 1, 2, 3] : [0];
+
+    rotations.forEach((rot) => {
+      const matches = constraints.every((c) => {
+        const candidateKind = getOpeningKind(candidate, rot, c.dir);
+        return isMatching(candidateKind, c.kind);
+      });
+
+      if (matches) {
+        candidates.push({ room: candidate, rotation: rot });
+      }
     });
   });
 
   if (candidates.length > 0) {
-    const nextRoom = candidates[Math.floor(Math.random() * candidates.length)];
-    placedRooms.push({ x, y, room: nextRoom });
+    // Weighted random selection
+    const totalWeight = candidates.reduce(
+      (sum, c) => sum + (c.room.weight || 1),
+      0
+    );
+    let random = Math.random() * totalWeight;
+    let selected = candidates[0];
+
+    for (const c of candidates) {
+      const w = c.room.weight || 1;
+      if (random < w) {
+        selected = c;
+        break;
+      }
+      random -= w;
+    }
+
+    placedRooms.push({ x, y, room: selected.room, rotation: selected.rotation });
     activeRoomCoord = { x, y };
     renderGrid();
   } else {
-    console.warn(`No suitable room found at (${x}, ${y}) that matches all adjacent walls/doors.`);
+    console.warn(
+      `No suitable room found at (${x}, ${y}) that matches all adjacent walls/doors.`
+    );
+    console.log("Constraints at this position:", constraints);
   }
 }
 

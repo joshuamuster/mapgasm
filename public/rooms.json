@@ -15,7 +15,7 @@
       "id": "cave-room-0",
       "name": "open plan",
       "image": "/rooms/cave/cave-room-17.jpg",
-      "allowRotation": true,
+      "allowRotation": false,
       "weight": 1,
       "tags": ["stone"],
       "openings": {
@@ -26,7 +26,7 @@
           "kind": "door"
         },
         "S": {
-          "kind": "door"
+          "kind": "none"
         },
         "W": {
           "kind": "door"
@@ -1406,7 +1406,7 @@
       "tags": ["stone", "special"],
       "openings": {
         "N": {
-          "kind": "track"
+          "kind": "tracks"
         },
         "E": {
           "kind": "none"
@@ -1739,10 +1739,10 @@
           "kind": "none"
         },
         "E": {
-          "kind": "train"
+          "kind": "tracks"
         },
         "S": {
-          "kind": "train"
+          "kind": "tracks"
         },
         "W": {
           "kind": "none"
@@ -1797,7 +1797,7 @@
       "id": "cave-room-81",
       "name": "Outside Cave Entrance",
       "image": "/rooms/cave/cave-room-81.jpg",
-      "allowRotation": true,
+      "allowRotation": false,
       "weight": 1,
       "tags": ["stone", "entrance"],
       "openings": {
@@ -1863,7 +1863,7 @@
       "id": "cave-room-84",
       "name": "Desert Cave entrance",
       "image": "/rooms/cave/cave-room-84.jpg",
-      "allowRotation": true,
+      "allowRotation": false,
       "weight": 0.7,
       "tags": ["stone", "entrance"],
       "openings": {
