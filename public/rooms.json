@@ -17,7 +17,7 @@
       "image": "/rooms/cave/cave-room-17.jpg",
       "allowRotation": false,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "door"
@@ -39,7 +39,7 @@
       "image": "/rooms/cave/cave-room-1.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "wall"
@@ -61,7 +61,7 @@
       "image": "/rooms/cave/cave-room-2.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "wall"
@@ -82,8 +82,8 @@
       "name": "single wall w_exit",
       "image": "/rooms/cave/cave-room-3.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "wall"
@@ -104,8 +104,8 @@
       "name": "two walls",
       "image": "/rooms/cave/cave-room-4.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "none"
@@ -127,7 +127,7 @@
       "image": "/rooms/cave/cave-room-5.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "none"
@@ -149,7 +149,7 @@
       "image": "/rooms/cave/cave-room-6.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "door"
@@ -170,8 +170,8 @@
       "name": "three walls dead end",
       "image": "/rooms/cave/cave-room-7.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "none"
@@ -192,8 +192,8 @@
       "name": "three walls one exit",
       "image": "/rooms/cave/cave-room-8.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "none"
@@ -215,7 +215,7 @@
       "image": "/rooms/cave/cave-room-9.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "door"
@@ -237,7 +237,7 @@
       "image": "/rooms/cave/cave-room-10.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "door"
@@ -258,8 +258,8 @@
       "name": "three walls RIGHT exit",
       "image": "/rooms/cave/cave-room-11.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "none"
@@ -280,8 +280,8 @@
       "name": "three walls Left exit",
       "image": "/rooms/cave/cave-room-12.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "door"
@@ -303,7 +303,7 @@
       "image": "/rooms/cave/cave-room-13.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "none"
@@ -325,7 +325,7 @@
       "image": "/rooms/cave/cave-room-14.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "door"
@@ -346,8 +346,8 @@
       "name": "four walls 2 exits elbow",
       "image": "/rooms/cave/cave-room-15.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "none"
@@ -368,8 +368,8 @@
       "name": "four walls 3 exits",
       "image": "/rooms/cave/cave-room-16.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "none"
@@ -391,7 +391,7 @@
       "image": "/rooms/cave/cave-room-17.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "door"
@@ -413,7 +413,7 @@
       "image": "/rooms/cave/cave-room-18.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone"],
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "wall"
@@ -434,8 +434,8 @@
       "name": "corner piece south exit",
       "image": "/rooms/cave/cave-room-19.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "wall"
@@ -456,8 +456,8 @@
       "name": "two walls corner piece",
       "image": "/rooms/cave/cave-room-20.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic"],
       "openings": {
         "N": {
           "kind": "wall"
@@ -479,7 +479,7 @@
       "image": "/rooms/cave/cave-room-21.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone", "hallway"],
+      "tags": ["basic", "hallway"],
       "openings": {
         "N": {
           "kind": "door"
@@ -501,7 +501,7 @@
       "image": "/rooms/cave/cave-room-22.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone", "hallway", "trap"],
+      "tags": ["basic", "hallway", "trap"],
       "openings": {
         "N": {
           "kind": "door"
@@ -522,8 +522,8 @@
       "name": "dead end corridor",
       "image": "/rooms/cave/cave-room-23.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone", "deadend"],
+      "weight": 1,
+      "tags": ["basic", "hallway", "deadend"],
       "openings": {
         "N": {
           "kind": "none"
@@ -544,8 +544,8 @@
       "name": "dead end stairs up",
       "image": "/rooms/cave/cave-room-24.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone", "stairs", "up"],
+      "weight": 1,
+      "tags": ["basic", "hallway", "deadend", "stairs", "up"],
       "openings": {
         "N": {
           "kind": "none"
@@ -567,7 +567,7 @@
       "image": "/rooms/cave/cave-room-25.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone", "stairs", "down"],
+      "tags": ["basic", "hallway", "deadend", "stairs", "down"],
       "openings": {
         "N": {
           "kind": "none"
@@ -589,7 +589,7 @@
       "image": "/rooms/cave/cave-room-26.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone", "stairs", "up"],
+      "tags": ["basic", "hallway", "deadend", "ladder", "up"],
       "openings": {
         "N": {
           "kind": "none"
@@ -610,8 +610,8 @@
       "name": "dead end ladder down",
       "image": "/rooms/cave/cave-room-27.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone", "stairs", "down"],
+      "weight": 1,
+      "tags": ["basic", "hallway", "deadend", "ladder", "down"],
       "openings": {
         "N": {
           "kind": "none"
@@ -632,8 +632,8 @@
       "name": "elbow corridor",
       "image": "/rooms/cave/cave-room-28.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone", "corridor"],
+      "weight": 1,
+      "tags": ["basic", "hallway"],
       "openings": {
         "N": {
           "kind": "none"
@@ -655,7 +655,7 @@
       "image": "/rooms/cave/cave-room-29.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone", "corridor"],
+      "tags": ["basic", "hallway"],
       "openings": {
         "N": {
           "kind": "none"
@@ -677,7 +677,7 @@
       "image": "/rooms/cave/cave-room-30.jpg",
       "allowRotation": true,
       "weight": 1,
-      "tags": ["stone", "corridor"],
+      "tags": ["basic", "hallway"],
       "openings": {
         "N": {
           "kind": "door"
@@ -698,8 +698,8 @@
       "name": "corridor to open plan",
       "image": "/rooms/cave/cave-room-31.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone"],
+      "weight": 1,
+      "tags": ["basic", "hallway"],
       "openings": {
         "N": {
           "kind": "door"
@@ -720,8 +720,8 @@
       "name": "upper level transition",
       "image": "/rooms/cave/cave-room-32.jpg",
       "allowRotation": true,
-      "weight": 0.7,
-      "tags": ["stone", "special"],
+      "weight": 0.75,
+      "tags": ["basic", "special", "deadend"],
       "openings": {
         "N": {
           "kind": "none"
@@ -786,7 +786,7 @@
       "name": "upper level w_out steps",
       "image": "/rooms/cave/cave-room-35.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -808,7 +808,7 @@
       "name": "spike gap",
       "image": "/rooms/cave/cave-room-36.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "traps"],
       "openings": {
         "N": {
@@ -874,7 +874,7 @@
       "name": "chasm",
       "image": "/rooms/cave/cave-room-39.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "chasm"],
       "openings": {
         "N": {
@@ -896,7 +896,7 @@
       "name": "w_exit and entrance",
       "image": "/rooms/cave/cave-room-40.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "chasm"],
       "openings": {
         "N": {
@@ -962,7 +962,7 @@
       "name": "chasm bridge",
       "image": "/rooms/cave/cave-room-43.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "chasm"],
       "openings": {
         "N": {
@@ -984,7 +984,7 @@
       "name": "chasm with motes",
       "image": "/rooms/cave/cave-room-44.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "chasm"],
       "openings": {
         "N": {
@@ -1050,7 +1050,7 @@
       "name": "chasm motes w_ chest",
       "image": "/rooms/cave/cave-room-47.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "chasm", "treasure"],
       "openings": {
         "N": {
@@ -1072,7 +1072,7 @@
       "name": "motes w_ spider nest",
       "image": "/rooms/cave/cave-room-48.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "chasm"],
       "openings": {
         "N": {
@@ -1138,7 +1138,7 @@
       "name": "corridor w_ statues",
       "image": "/rooms/cave/cave-room-51.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -1160,7 +1160,7 @@
       "name": "vine corridor",
       "image": "/rooms/cave/cave-room-52.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -1226,7 +1226,7 @@
       "name": "fallen statue stone pillars",
       "image": "/rooms/cave/cave-room-55.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -1248,7 +1248,7 @@
       "name": "stone throne",
       "image": "/rooms/cave/cave-room-56.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "special"],
       "openings": {
         "N": {
@@ -1314,7 +1314,7 @@
       "name": "Ritual room",
       "image": "/rooms/cave/cave-room-59.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "special"],
       "openings": {
         "N": {
@@ -1336,7 +1336,7 @@
       "name": "crypt",
       "image": "/rooms/cave/cave-room-60.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -1402,7 +1402,7 @@
       "name": "mine entrance",
       "image": "/rooms/cave/cave-room-63.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "special"],
       "openings": {
         "N": {
@@ -1424,7 +1424,7 @@
       "name": "Vine room",
       "image": "/rooms/cave/cave-room-64.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "special"],
       "openings": {
         "N": {
@@ -1490,7 +1490,7 @@
       "name": "Clockwork chasm",
       "image": "/rooms/cave/cave-room-67.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "clockwork"],
       "openings": {
         "N": {
@@ -1512,7 +1512,7 @@
       "name": "Ghastly Fountain",
       "image": "/rooms/cave/cave-room-68.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "starting"],
       "openings": {
         "N": {
@@ -1578,7 +1578,7 @@
       "name": "Steam Punk Trainstop",
       "image": "/rooms/cave/cave-room-71.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "train"],
       "openings": {
         "N": {
@@ -1600,7 +1600,7 @@
       "name": "Stalagmite Crop",
       "image": "/rooms/cave/cave-room-72.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -1666,7 +1666,7 @@
       "name": "Cliff side balcony",
       "image": "/rooms/cave/cave-room-75.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -1688,7 +1688,7 @@
       "name": "crossing",
       "image": "/rooms/cave/cave-room-76.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -1754,7 +1754,7 @@
       "name": "Mushroom corridor",
       "image": "/rooms/cave/cave-room-79.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -1776,7 +1776,7 @@
       "name": "chasm w_ small ledge",
       "image": "/rooms/cave/cave-room-80.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "chasm"],
       "openings": {
         "N": {
@@ -1842,7 +1842,7 @@
       "name": "Corridor w_ well",
       "image": "/rooms/cave/cave-room-83.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "special"],
       "openings": {
         "N": {
@@ -1864,7 +1864,7 @@
       "name": "Desert Cave entrance",
       "image": "/rooms/cave/cave-room-84.jpg",
       "allowRotation": false,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "entrance"],
       "openings": {
         "N": {
@@ -1930,7 +1930,7 @@
       "name": "Lava Crossing",
       "image": "/rooms/cave/cave-room-87.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "special", "lava"],
       "openings": {
         "N": {
@@ -1952,7 +1952,7 @@
       "name": "Steps and Columns",
       "image": "/rooms/cave/cave-room-88.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "special"],
       "openings": {
         "N": {
@@ -2018,7 +2018,7 @@
       "name": "Sea Cave Long island",
       "image": "/rooms/cave/cave-room-91.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -2040,7 +2040,7 @@
       "name": "Exit by Sea",
       "image": "/rooms/cave/cave-room-92.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -2091,13 +2091,13 @@
           "kind": "waterwall"
         },
         "E": {
-          "kind": "none"
+          "kind": "door"
         },
         "S": {
           "kind": "waterwall"
         },
         "W": {
-          "kind": "none"
+          "kind": "door"
         }
       }
     },
@@ -2106,7 +2106,7 @@
       "name": "Sea cave",
       "image": "/rooms/cave/cave-room-95.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -2128,7 +2128,7 @@
       "name": "Corridor with Ascending Steps",
       "image": "/rooms/cave/cave-room-96.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone"],
       "openings": {
         "N": {
@@ -2194,7 +2194,7 @@
       "name": "Private Chambers",
       "image": "/rooms/cave/cave-room-99.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "special"],
       "openings": {
         "N": {
@@ -2216,7 +2216,7 @@
       "name": "Lost Library",
       "image": "/rooms/cave/cave-room-100.jpg",
       "allowRotation": true,
-      "weight": 0.7,
+      "weight": 1,
       "tags": ["stone", "special"],
       "openings": {
         "N": {

@@ -47,59 +47,21 @@ let lastTouchMidY = 0;
 let currentRangeMinX: number | null = null;
 let currentMaxY: number | null = null;
 
+// Animation state
+let animationFrameId: number | null = null;
+
+function cancelAnimation() {
+  if (animationFrameId !== null) {
+    cancelAnimationFrame(animationFrameId);
+    animationFrameId = null;
+  }
+}
+
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
 const dirList: ("N" | "E" | "S" | "W")[] = ["N", "E", "S", "W"];
-
-function rotateActiveRoom() {
-  if (!activeRoomCoord) return;
-  const { x, y } = activeRoomCoord;
-  const placedIdx = placedRooms.findIndex((r) => r.x === x && r.y === y);
-  if (placedIdx === -1) return;
-
-  const placed = placedRooms[placedIdx];
-  const constraints = getConstraints(x, y);
-
-  const validRotations: number[] = [];
-  const possibleRotations = placed.room.allowRotation ? [0, 1, 2, 3] : [0];
-
-  possibleRotations.forEach((rot) => {
-    const matches = constraints.every((c) => {
-      const kind = getOpeningKind(placed.room, rot, c.dir);
-      return isMatching(kind, c.kind);
-    });
-    if (matches) validRotations.push(rot);
-  });
-
-  if (validRotations.length > 1) {
-    const currentRotIdx = validRotations.indexOf(placed.rotation);
-    const nextRotIdx = (currentRotIdx + 1) % validRotations.length;
-    placed.rotation = validRotations[nextRotIdx];
-    renderGrid();
-  }
-}
-
-function rotateEntireMap() {
-  placedRooms.forEach((pr) => {
-    const oldX = pr.x;
-    const oldY = pr.y;
-    pr.x = oldY;
-    pr.y = -oldX;
-    pr.rotation = (pr.rotation + 1) % 4;
-  });
-
-  if (activeRoomCoord) {
-    const oldX = activeRoomCoord.x;
-    const oldY = activeRoomCoord.y;
-    activeRoomCoord.x = oldY;
-    activeRoomCoord.y = -oldX;
-  }
-
-  // Clear current boundaries so they are recalculated
-  currentRangeMinX = null;
-  currentMaxY = null;
-
-  renderGrid();
-  recenter();
-}
 
 function getOpeningKind(
   room: Room,
@@ -113,14 +75,7 @@ function getOpeningKind(
 }
 
 function isMatching(k1: string, k2: string): boolean {
-  if (k1 === k2) return true;
-  // Treat 'none' and 'wall' as equivalent connection types
-  if ((k1 === 'none' || k1 === 'wall') && (k2 === 'none' || k2 === 'wall')) return true;
-  // Treat 'track' and 'tracks' as equivalent
-  if ((k1 === 'track' || k1 === 'tracks') && (k2 === 'track' || k2 === 'tracks')) return true;
-  // Treat 'waterdoor' and 'waterwall' as equivalent
-  if ((k1 === 'waterdoor' || k1 === 'waterwall') && (k2 === 'waterdoor' || k2 === 'waterwall')) return true;
-  return false;
+  return k1 === k2;
 }
 
 function getConstraints(
@@ -169,7 +124,7 @@ async function initGrid() {
   }
 
   renderGrid();
-  recenter();
+  recenter(undefined, undefined, true);
   setupEventListeners();
 }
 
@@ -179,11 +134,11 @@ function setupEventListeners() {
   const recenterLink = document.getElementById('recenter-link');
   const centerStartButton = document.getElementById('center-start-button');
   const centerActiveButton = document.getElementById('center-active-button');
-  const rotateMapButton = document.getElementById('rotate-map-button');
 
   if (!app || !gridContainer) return;
 
   const onStart = (clientX: number, clientY: number) => {
+    cancelAnimation();
     isDragging = true;
     dragStartX = clientX - offsetX;
     dragStartY = clientY - offsetY;
@@ -249,6 +204,7 @@ function setupEventListeners() {
     'wheel',
     (e) => {
       e.preventDefault();
+      cancelAnimation();
       if (e.ctrlKey) {
         // Pinch zoom on trackpad
         const factor = Math.exp(-e.deltaY * 0.01);
@@ -282,26 +238,10 @@ function setupEventListeners() {
       recenter();
     });
   }
-
-  if (rotateMapButton) {
-    rotateMapButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      rotateEntireMap();
-    });
-  }
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 'r') {
-      if (e.shiftKey) {
-        rotateEntireMap();
-      } else {
-        rotateActiveRoom();
-      }
-    }
-  });
 }
 
 function zoomAt(clientX: number, clientY: number, factor: number, isPinch = false) {
+  cancelAnimation();
   const newScale = Math.min(Math.max(scale * factor, 0.2), 5);
   const actualFactor = newScale / scale;
 
@@ -328,7 +268,7 @@ function updateTransform() {
   }
 }
 
-function recenter(x?: number, y?: number) {
+function recenter(x?: number, y?: number, immediate: boolean = false) {
   let targetCoordX = x;
   let targetCoordY = y;
 
@@ -351,10 +291,41 @@ function recenter(x?: number, y?: number) {
   const targetX = ((targetCoordX - currentRangeMinX) * 200 + 100) * scale;
   const targetY = ((currentMaxY - targetCoordY) * 200 + 100) * scale;
 
-  offsetX = viewportWidth / 2 - targetX;
-  offsetY = viewportHeight / 2 - targetY;
+  const desiredOffsetX = viewportWidth / 2 - targetX;
+  const desiredOffsetY = viewportHeight / 2 - targetY;
 
-  updateTransform();
+  if (immediate) {
+    cancelAnimation();
+    offsetX = desiredOffsetX;
+    offsetY = desiredOffsetY;
+    updateTransform();
+  } else {
+    animateTo(desiredOffsetX, desiredOffsetY);
+  }
+}
+
+function animateTo(targetX: number, targetY: number, duration: number = 1000) {
+  cancelAnimation();
+  const startX = offsetX;
+  const startY = offsetY;
+  const startTime = performance.now();
+
+  function step(currentTime: number) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = easeInOutCubic(progress);
+
+    offsetX = startX + (targetX - startX) * ease;
+    offsetY = startY + (targetY - startY) * ease;
+    updateTransform();
+
+    if (progress < 1) {
+      animationFrameId = requestAnimationFrame(step);
+    } else {
+      animationFrameId = null;
+    }
+  }
+  animationFrameId = requestAnimationFrame(step);
 }
 
 function renderGrid() {
@@ -383,8 +354,8 @@ function renderGrid() {
         placed.x === 0 && placed.y === 0 && dir === "S";
 
       // Only add a potential room if the current side has an expandable opening
-      // (not "none" or "wall") and it's not the South side of the starting room
-      const isExpandable = openingKind !== "none" && openingKind !== "wall";
+      // (not "none" and not the South side of the starting room)
+      const isExpandable = openingKind !== "none";
       if (isExpandable && !isStartingRoomSouth) {
         if (!placedRooms.some((r) => r.x === nx && r.y === ny)) {
           potentialRooms.set(key, { x: nx, y: ny });
@@ -435,9 +406,7 @@ function renderGrid() {
           box.classList.add('active-room');
         }
         box.addEventListener('click', () => {
-          if (activeRoomCoord && activeRoomCoord.x === x && activeRoomCoord.y === y) {
-            rotateActiveRoom();
-          } else {
+          if (!(activeRoomCoord && activeRoomCoord.x === x && activeRoomCoord.y === y)) {
             activeRoomCoord = { x, y };
             renderGrid();
           }
@@ -445,10 +414,7 @@ function renderGrid() {
         const img = document.createElement('img');
         img.src = placed.room.image;
         img.alt = placed.room.name;
-        img.title = `${placed.room.name} (Click to rotate)`;
-        if (placed.rotation !== 0) {
-          img.style.transform = `rotate(${placed.rotation * 90}deg)`;
-        }
+        img.title = placed.room.name;
         box.appendChild(img);
       } else {
         const potential = potentialRooms.get(`${x},${y}`);
@@ -482,7 +448,7 @@ function handlePotentialClick(x: number, y: number) {
       return;
     }
 
-    const rotations = candidate.allowRotation ? [0, 1, 2, 3] : [0];
+    const rotations = [0];
 
     rotations.forEach((rot) => {
       const matches = constraints.every((c) => {
