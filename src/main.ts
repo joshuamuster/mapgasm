@@ -285,22 +285,29 @@ function resetBoard() {
     }
   });
 
-  const resetState = () => {
+  const resetState = (immediate: boolean) => {
     placedRooms = placedRooms.filter((r) => r.x === 0 && r.y === 0);
     activeRoomCoord = { x: 0, y: 0 };
     renderGrid();
-    recenter(0, 0);
+    recenter(0, 0, immediate);
   };
 
   if (hasRoomsToRemove) {
+    // Start scrolling to center immediately, matching the fade duration (500ms)
+    recenter(0, 0, false, 500);
     // Wait for the fade-out transition (0.5s in CSS)
-    setTimeout(resetState, 500);
+    setTimeout(() => resetState(true), 500);
   } else {
-    resetState();
+    resetState(false);
   }
 }
 
-function recenter(x?: number, y?: number, immediate: boolean = false) {
+function recenter(
+  x?: number,
+  y?: number,
+  immediate: boolean = false,
+  duration: number = 1000
+) {
   let targetCoordX = x;
   let targetCoordY = y;
 
@@ -315,11 +322,11 @@ function recenter(x?: number, y?: number, immediate: boolean = false) {
   const viewportWidth = window.innerWidth;
   const viewportHeight = window.innerHeight;
 
-  // Each cell is 200x200. 
+  // Each cell is 200x200.
   // The cell at (x, y) is at grid-relative position:
   // left: (x - currentRangeMinX) * 200
   // top: (currentMaxY - y) * 200
-  
+
   const targetX = ((targetCoordX - currentRangeMinX) * 200 + 100) * scale;
   const targetY = ((currentMaxY - targetCoordY) * 200 + 100) * scale;
 
@@ -332,7 +339,7 @@ function recenter(x?: number, y?: number, immediate: boolean = false) {
     offsetY = desiredOffsetY;
     updateTransform();
   } else {
-    animateTo(desiredOffsetX, desiredOffsetY);
+    animateTo(desiredOffsetX, desiredOffsetY, duration);
   }
 }
 
