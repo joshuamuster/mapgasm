@@ -221,7 +221,7 @@ function setupEventListeners() {
   if (recenterLink) {
     recenterLink.addEventListener('click', (e) => {
       e.preventDefault();
-      recenter();
+      resetBoard();
     });
   }
 
@@ -265,6 +265,38 @@ function updateTransform() {
     gridContainer.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
     app.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
     app.style.backgroundSize = `${200 * scale}px ${200 * scale}px`;
+  }
+}
+
+function resetBoard() {
+  cancelAnimation();
+
+  const gridItems = document.querySelectorAll('.placed-room');
+  let hasRoomsToRemove = false;
+
+  gridItems.forEach((item) => {
+    const htmlItem = item as HTMLElement;
+    const x = parseInt(htmlItem.dataset.x || '0');
+    const y = parseInt(htmlItem.dataset.y || '0');
+
+    if (x !== 0 || y !== 0) {
+      htmlItem.classList.add('fade-out');
+      hasRoomsToRemove = true;
+    }
+  });
+
+  const resetState = () => {
+    placedRooms = placedRooms.filter((r) => r.x === 0 && r.y === 0);
+    activeRoomCoord = { x: 0, y: 0 };
+    renderGrid();
+    recenter(0, 0);
+  };
+
+  if (hasRoomsToRemove) {
+    // Wait for the fade-out transition (0.5s in CSS)
+    setTimeout(resetState, 500);
+  } else {
+    resetState();
   }
 }
 
@@ -396,6 +428,8 @@ function renderGrid() {
     for (let x = rangeMinX; x <= rangeMaxX; x++) {
       const box = document.createElement('div');
       box.className = 'grid-item';
+      box.dataset.x = x.toString();
+      box.dataset.y = y.toString();
       box.style.gridRow = (maxY - y + 1).toString();
       box.style.gridColumn = (x - rangeMinX + 1).toString();
 
